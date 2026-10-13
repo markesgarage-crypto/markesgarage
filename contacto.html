@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto — Markes Garage</title>
+<meta name="description" content="Fala com a Markes Garage: formulário de contacto e dados para me encontrares.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top wrap">
+  <a class="logo" href="index.html">MARKES GARAGE</a>
+  <nav aria-label="Principal">
+    <a href="index.html#colecao">Coleção</a>
+    <a href="index.html#sobre">Sobre</a>
+    <a href="contacto.html" aria-current="page">Contacto</a>
+  </nav>
+</header>
+
+<main class="pagina">
+  <section class="contacto">
+    <div class="wrap">
+      <h2>Contacta-me</h2>
+      <p class="intro">Queres ver os carros ao vivo, falar de clássicos ou convidar-me para um evento? Escreve-me.</p>
+
+      <div class="contacto-grid">
+        <!-- Troca SEU_ID pelo código que o Formspree te der -->
+        <form class="contacto-form" action="https://formspree.io/f/SEU_ID" method="POST">
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" autocomplete="name" required>
+          </div>
+          <div class="campo">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="campo">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+          </div>
+          <input class="honey" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn" type="submit">Enviar mensagem</button>
+        </form>
+
+        <aside class="dados" aria-label="Dados de contacto">
+          <h3>Dados de contacto</h3>
+          <ul>
+            <li><span class="rotulo">Email</span><a href="mailto:markesgarage@gmail.com">markesgarage@gmail.com</a></li>
+            <li><span class="rotulo">Telefone</span>A preencher</li>
+            <li><span class="rotulo">Localização</span>A preencher</li>
+            <li><span class="rotulo">Instagram</span><a href="https://instagram.com/o-teu-perfil">@o-teu-perfil</a></li>
+            <li><span class="rotulo">Facebook</span><a href="https://facebook.com/o-teu-perfil">o-teu-perfil</a></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span class="ano">2026</span> Markes Garage. Todos os direitos reservados. · <a href="politica-privacidade.html">Política de Privacidade</a></div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
