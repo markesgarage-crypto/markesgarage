@@ -39,6 +39,11 @@
   .foto{background:var(--fundo-alt);overflow:hidden;border-radius:4px;border:1px solid var(--borda)}
   .foto img{width:100%;height:100%;object-fit:cover;display:block}
 
+  /* Isolado estritamente para o slideshow do topo */
+  #slideshow-destaque{position:relative}
+  #slideshow-destaque img{position:absolute;top:0;left:0;opacity:0;transition:opacity 1s ease-in-out}
+  #slideshow-destaque img.ativo{opacity:1}
+
   h2{font:800 clamp(1.75rem,4vw,2.75rem)/1.1 var(--head);font-stretch:112%;margin-bottom:2.5rem;color:var(--texto)}
   section{padding:clamp(3rem,7vw,5.5rem) 0}
 
@@ -92,7 +97,14 @@
   <div class="wrap hero">
     <h1>Cada carro uma história.</h1>
     <p>Uma pequena coleção de carros antigos, conservados e conduzidos. Aqui encontras as fotos, a história e a ficha técnica de cada um.</p>
-    <div class="foto"><img src="fotos/destaque.jpg" alt="Foto de destaque da coleção" loading="eager"></div>
+    
+    <!-- Slideshow com as 4 fotos de destaque -->
+    <div class="foto" id="slideshow-destaque">
+      <img src="fotos/destaque-1.jpg" alt="Destaque 1 Markes Garage" class="ativo" loading="eager">
+      <img src="fotos/destaque-2.jpg" alt="Destaque 2 Markes Garage" loading="lazy">
+      <img src="fotos/destaque-3.jpg" alt="Destaque 3 Markes Garage" loading="lazy">
+      <img src="fotos/destaque-4.jpg" alt="Destaque 4 Markes Garage" loading="lazy">
+    </div>
   </div>
 
   <section id="colecao">
@@ -159,6 +171,22 @@
   <div class="wrap">© <span id="ano">2026</span> Markes Garage. Todos os direitos reservados.</div>
 </footer>
 
-<script>document.getElementById("ano").textContent = new Date().getFullYear();</script>
+<script>
+  // Atualiza o ano no rodapé
+  document.getElementById("ano").textContent = new Date().getFullYear();
+
+  // Transição automática das 4 fotos de destaque a cada 3 segundos
+  const imagensDestaque = document.querySelectorAll('#slideshow-destaque img');
+  let indiceAtual = 0;
+
+  function mudarSlide() {
+    imagensDestaque[indiceAtual].classList.remove('ativo');
+    indiceAtual = (indiceAtual + 1) % imagensDestaque.length;
+    imagensDestaque[indiceAtual].classList.add('ativo');
+  }
+
+  // Altera a cada 3000 milissegundos (3 segundos)
+  setInterval(mudarSlide, 3000);
+</script>
 </body>
 </html>
