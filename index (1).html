@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Classe Garage — Carros clássicos</title>
+<meta name="description" content="Uma pequena coleção de carros clássicos, com fotos, história e ficha técnica de cada um.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde:#12302a;      /* verde racing, fundo principal */
+    --verde-2:#1b4137;    /* painéis */
+    --marfim:#e6e9e2;     /* texto */
+    --cromado:#a9b4b3;    /* texto secundário */
+    --latao:#c19a46;      /* destaque */
+    --tinta:#0c1c18;
+    --head:"Archivo","Arial Black",Arial,sans-serif;
+    --body:"Source Serif 4",Georgia,serif;
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--verde);color:var(--marfim);font:400 1.125rem/1.65 var(--body)}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--latao);outline-offset:3px}
+  .wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+
+  header.top{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0;border-bottom:1px solid #ffffff22}
+  .logo{font:800 1.1rem var(--head);font-stretch:125%;text-decoration:none;letter-spacing:.02em}
+  nav a{margin-left:1.5rem;text-decoration:none;color:var(--cromado)}
+  nav a:hover{color:var(--marfim);text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--latao)}
+
+  .hero{padding:clamp(3rem,9vw,7rem) 0 clamp(2.5rem,6vw,4.5rem)}
+  .hero h1{font:900 clamp(3rem,11vw,9rem)/.9 var(--head);font-stretch:125%;letter-spacing:-.02em;max-width:12ch}
+  .hero p{max-width:34rem;margin-top:1.75rem;color:var(--cromado);font-size:1.25rem}
+  .hero .foto{margin-top:3rem;aspect-ratio:21/9}
+
+  .foto{background:linear-gradient(135deg,var(--verde-2),var(--tinta));overflow:hidden;border-radius:2px}
+  .foto img{width:100%;height:100%;object-fit:cover;display:block}
+
+  h2{font:800 clamp(1.75rem,4vw,2.75rem)/1.1 var(--head);font-stretch:112%;margin-bottom:2.5rem}
+  section{padding:clamp(3rem,7vw,5.5rem) 0}
+
+  /* Cada carro é uma "ficha": foto + dados */
+  .carro{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center;padding:2.5rem 0;border-top:1px solid #ffffff22}
+  .carro:nth-child(even) .foto{order:2}
+  .carro .foto{aspect-ratio:4/3}
+  .carro h3{font:800 clamp(1.5rem,3vw,2.1rem)/1.15 var(--head);font-stretch:112%}
+  .carro .ano{color:var(--latao);font:600 1rem var(--head);margin:.35rem 0 1rem}
+  .carro p{color:var(--cromado)}
+  dl{display:grid;grid-template-columns:auto 1fr;gap:.4rem 1.25rem;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--latao);font-size:1rem}
+  dt{color:var(--cromado)}
+  dd{margin:0}
+
+  .sobre{background:var(--verde-2)}
+  .sobre .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,5vw,4rem);align-items:start}
+  .sobre p+p{margin-top:1rem}
+  .sobre .foto{aspect-ratio:4/5}
+
+  .contacto p{max-width:34rem;color:var(--cromado)}
+  .btn{display:inline-block;margin-top:1.75rem;padding:.9rem 1.6rem;background:var(--latao);color:var(--tinta);font:700 1rem var(--head);text-decoration:none;border-radius:2px}
+  .btn:hover{background:var(--marfim)}
+  .redes{margin-top:1.5rem}
+  .redes a{margin-right:1.5rem}
+
+  footer{padding:2rem 0;border-top:1px solid #ffffff22;color:var(--cromado);font-size:.95rem}
+
+  @media (max-width:760px){
+    .carro,.sobre .wrap{grid-template-columns:1fr}
+    .carro:nth-child(even) .foto{order:0}
+    nav a{margin-left:1rem}
+    .hero .foto{aspect-ratio:4/3}
+  }
+</style>
+</head>
+<body>
+
+<header class="top wrap">
+  <a class="logo" href="#topo">CLASSE GARAGE</a>
+  <nav aria-label="Principal">
+    <a href="#colecao">Coleção</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<main id="topo">
+  <div class="wrap hero">
+    <h1>Clássicos que ainda andam.</h1>
+    <p>Uma pequena coleção de carros antigos, conservados e conduzidos. Aqui encontras as fotos, a história e a ficha técnica de cada um.</p>
+    <div class="foto"><img src="fotos/destaque.jpg" alt="Foto de destaque da coleção" loading="eager"></div>
+  </div>
+
+  <section id="colecao">
+    <div class="wrap">
+      <h2>A coleção</h2>
+
+      <!-- Copia este bloco <article> para cada carro novo -->
+      <article class="carro">
+        <div class="foto"><img src="fotos/carro-1.jpg" alt="BMW 2002 de 1971 cor Málaga" loading="lazy"></div>
+        <div>
+          <h3>BMW 2002</h3>
+          <p class="ano">1971</p>
+          <p>Escreve aqui a história do carro: como o encontraste, o que restauraste, o que o torna especial para ti.</p>
+          <dl>
+            <dt>Cor</dt><dd>Málaga</dd>
+            <dt>Motor</dt><dd>M10, 2000 cc</dd>
+            <dt>Potência</dt><dd>105 cv</dd>
+            <dt>Estado</dt><dd>Original</dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="carro">
+        <div class="foto"><img src="fotos/carro-2.jpg" alt="Renault 4L de 1978 azul escuro" loading="lazy"></div>
+        <div>
+          <h3>Renault 4L</h3>
+          <p class="ano">1978</p>
+          <p>Escreve aqui a história do carro: como o encontraste, o que restauraste, o que o torna especial para ti.</p>
+          <dl>
+            <dt>Cor</dt><dd>Azul escuro</dd>
+            <dt>Motor</dt><dd>Billancourt, 850 cc</dd>
+            <dt>Potência</dt><dd>34 cv</dd>
+            <dt>Estado</dt><dd>Original</dd>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="sobre" class="sobre">
+    <div class="wrap">
+      <div>
+        <h2>Sobre a coleção</h2>
+        <p>Conta aqui quem és e como começou a coleção: o primeiro carro, de onde vem o gosto por clássicos, o que procuras num carro antigo.</p>
+        <p>Podes também falar dos eventos a que vais, dos encontros de clássicos e dos amigos que partilham a mesma paixão.</p>
+      </div>
+      <div class="foto"><img src="fotos/sobre.jpg" alt="Retrato do dono junto a um dos carros" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <div class="wrap">
+      <h2>Contacto</h2>
+      <p>Queres ver os carros ao vivo, falar de clássicos ou convidar-me para um evento? Escreve-me.</p>
+      <a class="btn" href="mailto:o-teu-email@exemplo.pt">Enviar email</a>
+      <p class="redes">
+        <a href="https://instagram.com/o-teu-perfil">Instagram</a>
+        <a href="https://facebook.com/o-teu-perfil">Facebook</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="ano">2026</span> Classe Garage. Todos os direitos reservados.</div>
+</footer>
+
+<script>document.getElementById("ano").textContent = new Date().getFullYear();</script>
+</body>
+</html>
