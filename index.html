@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Markes Garage — Carros clássicos</title>
+<meta name="description" content="Uma pequena coleção de carros clássicos, com fotos, história e ficha técnica de cada um.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top wrap">
+  <a class="logo" href="#topo">MARKES GARAGE</a>
+  <nav aria-label="Principal">
+    <a href="#colecao">Coleção</a>
+    <a href="#sobre">Sobre</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<main id="topo">
+  <div class="wrap hero">
+    <h1>Cada carro uma história.</h1>
+    <p>Uma pequena coleção de carros antigos, conservados e conduzidos. Aqui encontras as fotos, a história e a ficha técnica de cada um.</p>
+
+    <!-- Slideshow com as 4 fotos de destaque -->
+    <div class="foto" id="slideshow-destaque">
+      <img src="fotos/destaque-1.jpg" alt="Destaque 1 Markes Garage" class="ativo" loading="eager">
+      <img src="fotos/destaque-2.jpg" alt="Destaque 2 Markes Garage">
+      <img src="fotos/destaque-3.jpg" alt="Destaque 3 Markes Garage">
+      <img src="fotos/destaque-4.jpg" alt="Destaque 4 Markes Garage">
+    </div>
+  </div>
+
+  <section id="colecao">
+    <div class="wrap">
+      <h2>A coleção</h2>
+
+      <!-- Copia este bloco <article> para cada carro novo -->
+      <article class="carro">
+        <div class="foto"><img src="fotos/carro-1.jpg" alt="BMW 2002 de 1971 cor Málaga" loading="lazy"></div>
+        <div>
+          <h3>BMW 2002</h3>
+          <p class="fabrico">1971</p> <!-- Removido o class="ano" -->
+          <p>Escreve aqui a história do carro: como o encontraste, o que restauraste, o que o torna especial para ti.</p>
+          <dl>
+            <dt>Cor</dt><dd>Málaga</dd>
+            <dt>Motor</dt><dd>M10, 2000 cc</dd>
+            <dt>Potência</dt><dd>105 cv</dd>
+            <dt>Estado</dt><dd>Original</dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="carro">
+        <div class="foto"><img src="fotos/carro-2.jpg" alt="Renault 4L de 1978 azul escuro" loading="lazy"></div>
+        <div>
+          <h3>Renault 4L</h3>
+          <p class="fabrico">1978</p> 
+          <p>Escreve aqui a história do carro: como o encontraste, o que restauraste, o que o torna especial para ti.</p>
+          <dl>
+            <dt>Cor</dt><dd>Azul escuro</dd>
+            <dt>Motor</dt><dd>Billancourt, 850 cc</dd>
+            <dt>Potência</dt><dd>34 cv</dd>
+            <dt>Estado</dt><dd>Original</dd>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="sobre" class="sobre">
+    <div class="wrap">
+      <div>
+        <h2>Sobre a coleção</h2>
+        <p>Conta aqui quem és e como começou a coleção: o primeiro carro, de onde vem o gosto por clássicos, o que procuras num carro antigo.</p>
+        <p>Podes também falar dos eventos a que vais, dos encontros de clássicos e dos amigos que partilham a mesma paixão.</p>
+      </div>
+      <div class="foto"><img src="fotos/sobre.jpg" alt="Retrato do dono junto a um dos carros" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <p>Queres ver os carros ao vivo ou falar de clássicos?</p>
+      <a class="btn" href="contacto.html">Contacta-me</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span class="ano">2026</span> Markes Garage. Todos os direitos reservados. · <a href="politica-privacidade.html">Política de Privacidade</a></div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
